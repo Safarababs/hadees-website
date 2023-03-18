@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap");
+nav {
+  background-color: #333;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  list-style: none;
+  margin-right: 20px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+nav ul li a:hover {
+  color: #f1c40f;
+}
+
+form {
+  width: 70%;
+  margin: 1rem auto;
+  padding: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+form h1 {
+  color: #3f51b5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+form select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+form select:focus {
+  outline: none;
+  border-color: #f50057;
+}
+form input[type=text] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+form input[type=text]:focus {
+  outline: none;
+  border-color: #f50057;
+}
+form textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  height: 10rem;
+}
+form textarea:focus {
+  outline: none;
+  border-color: #f50057;
+}
+form button[type=submit] {
+  background-color: #3f51b5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+form button[type=submit]:hover {
+  background-color: #f50057;
+}
+
+.contact {
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: column;
+}
+.contact h1 {
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-size: 2rem;
+  line-height: 4.5rem;
+}
+.contact h3 {
+  color: blue;
+}/*# sourceMappingURL=style.css.map */
