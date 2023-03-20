@@ -9,6 +9,7 @@ const AddHadith = () => {
   const [text, setText] = useState("");
   const [narrator, setNarrator] = useState("");
   const [reference, setReference] = useState("");
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,12 +35,16 @@ const AddHadith = () => {
       swal("Ravi ?", "Please mention ravi", "error");
     } else if (reference === "") {
       swal("Reference ?", "Please type reference", "error");
-    }  else {
+    } else {
       axios
         .post("http://localhost:3001/addhadees", data)
         .then((response) => {
           console.log(response);
-          swal(response.data, response.data,response.data === "added successfully" ? "success":"error")
+          swal(
+            response.data,
+            response.data,
+            response.data === "added successfully" ? "success" : "error"
+          );
         })
         .catch((error) => {
           console.error(error);
@@ -52,7 +57,7 @@ const AddHadith = () => {
       <form onSubmit={handleSubmit} className="hadees-form">
         <h1>Add Hadith</h1>
         <div>
-        <select
+          <select
             onChange={(event) => setBook(event.target.value)}
             type="text"
             placeholder="Book Name"
@@ -62,10 +67,8 @@ const AddHadith = () => {
           >
             <option defaultValue="selected">Select Book Name</option>
             <option>من لا یحضر الفقیہ || Man la yazur ul faqee</option>
-            <option>اصول کافی || Asool  e kaafi</option>
-            
+            <option>اصول کافی || Asool e kaafi</option>
           </select>
-          
         </div>
         <div>
           <input
@@ -79,7 +82,7 @@ const AddHadith = () => {
         <div>
           <input
             type="text"
-            placeholder="Hadees Number"
+            placeholder="Hadees number"
             id="hadithNumber"
             value={hadithNumber}
             onChange={(event) => setHadithNumber(event.target.value)}
