@@ -10,10 +10,12 @@ const AddHadith = () => {
   const [text, setText] = useState("");
   const [narrator, setNarrator] = useState("");
   const [reference, setReference] = useState("");
+  const [loading, setLoading] = useState(false);
   
 
-  const handleSubmit = (event) => {
+  async function handleSubmit  (event)  {
     event.preventDefault();
+    setLoading(true)
 
     const data = {
       book: book,
@@ -37,8 +39,7 @@ const AddHadith = () => {
     } else if (reference === "") {
       swal("Reference ?", "Please type reference", "error");
     } else {
-      axios
-        .post(website.backend+"/addhadees", data)
+      await axios.post(website.backend+"/addhadees", data)
         .then((response) => {
           console.log(response);
           swal(
@@ -51,8 +52,10 @@ const AddHadith = () => {
           console.error(error);
         });
     }
+    setLoading(false)
   };
 
+ 
   return (
     <div>
       <form onSubmit={handleSubmit} className="hadees-form">
@@ -115,7 +118,8 @@ const AddHadith = () => {
             onChange={(event) => setReference(event.target.value)}
           />
         </div>
-        <button type="submit">Click to Add Hadith</button>
+        <button type="submit" onClick={handleSubmit} disabled={loading}>
+        {loading ? "Loading... Please weight" : 'Submit successfully'}</button>
       </form>
     </div>
   );
