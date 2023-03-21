@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import website from './data';
 
 const HadithList = () => {
   const [hadiths, setHadiths] = useState([]);
 
 
   useEffect(() => {
-    axios.get('http://localhost:3001/hadees')
+    axios.get(website.backend+'/hadees')
       .then(response => {
         setHadiths(response.data);
         

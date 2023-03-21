@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
+import website from "./data";
 
 const AddHadith = () => {
   const [book, setBook] = useState("");
@@ -37,7 +38,7 @@ const AddHadith = () => {
       swal("Reference ?", "Please type reference", "error");
     } else {
       axios
-        .post("http://localhost:3001/addhadees", data)
+        .post(website.backend+"/addhadees", data)
         .then((response) => {
           console.log(response);
           swal(
