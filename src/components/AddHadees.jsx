@@ -70,8 +70,7 @@ const AddHadith = () => {
             className="form-control"
           >
             <option defaultValue="selected">Select Book Name</option>
-            <option>من لا یحضر الفقیہ || Man la yazur ul faqee</option>
-            <option>اصول کافی || Asool e kaafi</option>
+            <option>مسائل الشریعہ ترجمہ وسائل الشریعہ</option>
           </select>
         </div>
         <div>
@@ -119,7 +118,9 @@ const AddHadith = () => {
           />
         </div>
         <button type="submit" onClick={handleSubmit} disabled={loading}>
-        {loading ? "Loading... Please weight" : 'Submit successfully'}</button>
+        {loading ? "Saving... Please wait" : 'Submit'}</button>
+
+        
       </form>
     </div>
   );
